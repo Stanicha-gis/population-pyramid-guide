@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    background-color: #dfd8ff;
+}
+#text_top{
+    text-align: left;
+    margin-left: 20px;
+    color: #ff1f62;
+}
+.menu{
+    display: flex;
+    width: 100%;
+}
+.item{
+    flex: 1;
+    text-align: center;
+    border: 2px solid #5ed4cb;
+    font-size: clamp(11px,1.2vw,16px);
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #bbeeea;
+    border-right: 1px solid #04aab6;
+    border-left: 1px solid #04aab6;
+}
+.item:hover{
+    color: #8717f0;
+    text-decoration: underline;
+}
+.now{
+    border: 2px solid #ffa023;
+    background-color: #fdd07c;
+}
+.zentai{
+    font-size: 1.5rem;
+}
+.title{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.box{
+    font-size: 1rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+}
+.img{
+    width: 400px;
+    height: auto;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+}
+.img:hover{
+    filter: brightness(0.8);
+}
+.text table{
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #e5ffdd;
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    vertical-align: top;
+}
+th {
+    background: #f0f0f0;
+    text-align: left;
+}
+
+@media (max-width: 600px) {
+    .box {
+        flex-direction: column;
+    }
+
+    .excel-img {
+        width: 100%;
+        max-width: 300px;
+    }
+}

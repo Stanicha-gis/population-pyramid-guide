@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Rによる人口ピラミッドコード作成ツール</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="R-top-page.css">
+</head>
+<body>
+<div class="tool-link"><a href="henkan.html" target="_blank">タブ区切り→カンマ区切り変換ツールはこちら</a></div>
+<p>任意に設定した後、更新ボタン押し、コードをコピーしてRstudioに貼り付けてください。入力時にEnterキーを押せば次のテキストボックスへ移れます</p>
+    <div class="section">
+        <div class="section-title">① 男性</div>
+        <div class="field">
+            <label for="maleLabel">人口</label>
+            <input type="text" id="maleLabel" placeholder="例：2015,2412,...">
+        </div>
+        <div class="field">
+            <label for="maleColor">色</label>
+            <input type="color" id="maleColor" value="#1f77b4">
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">② 女性</div>
+        <div class="field">
+            <label for="femaleLabel">人口</label>
+            <input type="text" id="femaleLabel" placeholder="例：1920,2298,...">
+        </div>
+        <div class="field">
+            <label for="femaleColor">色</label>
+            <input type="color" id="femaleColor" value="red">
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">③ 年齢</div>
+        <div class="field">
+            <label for="ageVar">年齢階級</label>
+            <input type="text" id="ageVar" placeholder='例："0～4歳","5～9歳"...'>
+        </div>
+        <div class="field">
+            <label for="fontSize">フォントサイズ</label>
+            <input type="number" id="ageclass-fontSize" value="14" min="6" max="30"> pt
+        </div>
+    </div>
+    <div class="section-title">④横軸</div>
+        <div class="field">
+            <label for="horxix">最大値</label>
+            <input type="text" id="horixix-Max" placeholder="－男性の最大値,女性の最大値(例：-1750,1750)">
+            <label for="horxix">目盛線</label>
+            <input type="text" id="horixix-scale" placeholder="例：-1500,-750,0,750,1500">
+            <label for="fontSize">目盛線の太さ</label>
+            <input type="number" id="scale-fontSize" value="0.1" min="0.1" max="2" step="0.1"> pt
+            <label><input type="checkbox" id="grid-none" checked>目盛線を強調しない</label>
+
+        </div>
+        </div>
+
+    <div class="section-title">⑤縦軸ラベル</div>
+    <div class="field">
+            <label for="vertical-axix">縦軸ラベル</label>
+            <input type="text" id="vertical-axix-label" placeholder="例：年齢">
+            <label><input type="checkbox" id="vertical-none"> ラベルなし</label>
+
+    </div>
+
+    <div class="section-title">⑥横軸ラベル</div>
+    <div class="field">
+            <label for="horizontal-axix-label">横軸ラベル</label>
+            <input type="text" id="horizontal-axix-label" placeholder="例：人口(人)">
+            <label><input type="checkbox" id="horizontal-none"> ラベルなし</label>
+    </div>
+
+    <div class="section-title">⑦凡例</div>
+    <div class="field">
+            <label for="legend-label">凡例ラベル</label>
+            <input type="text" id="legend-sex" placeholder="例：性別">
+            <input type="text" id="legend-male" placeholder="例：男性">
+            <input type="text" id="legend-female" placeholder="例：女性"><br>
+            <label>凡例の位置</label><br>
+                <label><input type="radio" name="legend-pos" value="right" checked> 右</label>
+                <label><input type="radio" name="legend-pos" value="left"> 左</label>
+                <label><input type="radio" name="legend-pos" value="top"> 上</label>
+                <label><input type="radio" name="legend-pos" value="bottom"> 下</label>
+                <label><input type="radio" name="legend-pos" value="coord"> 座標指定</label>
+                    <div id="legend-coord-box" style="display:none;">
+                    X: <input type="number" id="legend-x" min="0" max="1" step="0.01">
+                    Y: <input type="number" id="legend-y" min="0" max="1" step="0.01"></div>
+                <label><input type="checkbox" id="legend-none" checked>凡例なし</label>
+    </div>
+
+    <div class="section-title">⑧タイトル</div>
+    <div class="field">
+            <label for="title-label">タイトルラベル</label>
+            <input type="text" id="title-label" placeholder="例：A市における人口ピラミッド">
+            <label><input type="checkbox" id="title-none" checked>タイトルなし</label>
+    </div>
+
+        <button id="generateBtn">更新</button>
+        <button id="copyBtn">コードをコピー</button>
+
+    <div id="copyCircle" style="display:none; font-size:20px; color:green; margin-top:5px;">〇 コピーしました</div>
+
+    <textarea id="codeOutput" placeholder="ここにコードが出力されます"></textarea>
+    
+    <script src="R-tool.js"></script>
+</body>
+</html>

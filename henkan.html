@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>タブ区切り → カンマ区切り変換ツール</title>
+<link rel="stylesheet" href="css/smart-style.css">
+<link rel="stylesheet" href="css/pc-style.css" media="screen and (min-width: 768px)">
+<style>
+  body {
+    font-family: sans-serif;
+    margin: 30px;
+  }
+  textarea {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h1>タブ区切り → カンマ区切り変換ツール</h1>
+
+<h3>① Excel から貼り付け</h3>
+<textarea id="input" placeholder="ここに Excel から貼り付け"></textarea>
+
+<button id="convert">カンマ区切りに変換</button>
+<button id="convertQuoted">カンマ区切り ＋ "" 付きに変換</button>
+<button id="clear">クリア</button>
+
+<h3>② 結果</h3>
+<textarea id="output" readonly placeholder="ここに結果が表示されます"></textarea>
+
+<button id="copy">結果をコピー</button>
+
+<script>
+document.getElementById("convert").addEventListener("click", function () {
+    const text = document.getElementById("input").value;
+
+    const converted = text
+        .trim()
+        .replace(/\t+/g, ",")
+        .replace(/\n+/g, ",");
+
+    document.getElementById("output").value = converted;
+});
+
+document.getElementById("copy").addEventListener("click", function () {
+    const output = document.getElementById("output");
+    output.select();
+    document.execCommand("copy");
+});
+
+document.getElementById("convertQuoted").addEventListener("click", function () {
+    const text = document.getElementById("input").value;
+
+    const converted = text
+        .trim()
+        .split(/\t+|\n+/)
+        .map(s => `"${s.trim()}"`)
+        .join(",");
+
+    document.getElementById("output").value = converted;
+});
+
+document.getElementById("clear").addEventListener("click",function(){
+    document.getElementById("input").value = "";
+    document.getElementById("output").value = "";
+})
+</script>
+
+</body>
+</html>

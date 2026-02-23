@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Excleによる人口ピラミッド作成</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="excel.css">
+    </head>
+    <body>
+    <div class="menu">
+        <a href="https://scharodoashihana.github.io/population-pyramid-guide/index.html" class="item">トップページ</a>
+        <a href="excel.html" class="item now">①Excel</a>
+        <a href="tool.html" class="item">②サイト</a>
+        <a href="R-top-page.html" class="item">③R</a>
+    </div>
+
+        <div class="step">
+            <h2>①データを用意する</h2>
+            <div class="img-text-box">
+                <img src="0.png" alt="Excelのデータ用意">
+                <div class="note">
+                    Excelで男女の年齢階級別の人口データを用意します。行と列は入れ替えても影響しません。
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <h2>②棒グラフを選択</h2>
+            <div class="img-text-box">
+                <img src="1.png" alt="棒グラフの選択">
+                <div class="note">
+                    <strong>｢挿入｣</strong>を選択し、<strong>｢2-D横棒 集合横棒｣</strong>を選択します。
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <h2>③｢書式｣を選択</h2>
+            <div class="img-text-box">
+                <img src="2.png" alt="書式の選択">
+                <div class="note">
+                    <strong>｢書式｣</strong>を選択します。画像左上の2つの赤丸のエリアはこの後使います。
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <h2>④グラフエリアの書式設定</h2>
+            <div class="img-text-box">
+                <img src="4.png" alt="グラフエリアの書式設定">
+                <div class="note">
+                    <strong>｢グラフエリア｣</strong>のまま、｢選択対象の書式設定｣を選択し、｢プロパティ｣から<strong>｢セルに合わせて移動するがサイズ変更はしない｣</strong>をクリックします。
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <h2>⑤系列｢女性｣の書式設定</h2>
+            <div class="img-text-box">
+                <img src="5.png" alt="女性の書式設定">
+                <img src="5-2.png" alt="二枚目">
+                <div class="note">
+                    ｢グラフエリア｣→<strong>｢系列"女性"｣</strong>へと変更し、系列のオプションで、<strong>｢第2軸(上/右側)｣</strong>を選択します。
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <h2>⑥男性の書式設定(1/2)</h2>
+            <div class="img-text-box">
+                <img src="6.png" alt="男性の書式設定">
+                <img src="6-2.png" alt="男性の書式設定">
+                <div class="note">
+                    ｢系列"女性"｣→<strong>｢横(値)軸｣</strong>へと変更し、軸のオプションから<strong>最小値</strong>を入力します。<strong>－(最大値＋目盛の間隔)</strong>を入力するとうまくいきます。今回は、｢4943｣が最大値であり、2000間隔で目盛線を入れたいため、－7000前後を入力します。しかし、－7000では、年齢の凡例と棒グラフが重なるため、今回は－8000と入力しました。
+                <br>続いて、<strong>｢軸を反転する｣</strong>をクリックします。
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <h2>⑦男性の書式設定(2/2)</h2>
+            <div class="img-text-box">
+                <img src="7.png" alt="男性の書式設定">
+                <div class="note">
+                    ｢軸のオプション｣の下にある<strong>｢表示形式｣</strong>を選択します。その後｢標準｣→<strong>｢ユーザー設定｣</strong>へと変更し、<strong>｢#,##0;｣</strong>と設定します。
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <h2>⑧女性の書式設定</h2>
+            <div class="img-text-box">
+                <img src="8.png" alt="女性の書式設定">
+                <img src="8-2.png" alt="女性の書式設定">
+                <div class="note">
+                    ｢横(値)軸｣→<strong>｢第2軸 横(値)軸｣</strong>へと変更し、⑥⑦と同様の操作をします。しかし、ここでは<strong>｢軸を反転する｣は選択しないでください。</strong>
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <h2>⑨その他の設定</h2>
+            <div class="img-text-box">
+                <img src="9.png" alt="その他の書式設定">
+                <div class="note">
+                    図のように、棒グラフ間の間隔を小さくします。その他にも、<br><br>
+                    ・グラフタイトル<br>
+                    ・性別、人口の凡例のフォント<br>
+                    ・棒グラフの色<br>
+                    ・(千人)などの単位<br><br>
+                    などを任意に設定し、図を整えます。
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <h2>完成</h2>
+            <div class="img-text-box">
+                <img src="excel-img.png" alt="完成">
+                <div class="note">
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

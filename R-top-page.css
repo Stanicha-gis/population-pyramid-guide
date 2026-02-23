@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    margin-left: 5px;
+    background-color: #c8f0ee;
+}
+.theme{
+    font-size: 1.7rem;
+    text-decoration: underline;
+}
+.theme1 a{
+    font-size: 20px;
+    color: blue;
+    text-decoration: none;
+}
+.theme1 a:hover{
+    color: #8717f0;
+    text-decoration: underline;
+}
+.tool-link a{
+    color:blue;
+    font-size: 1.5rem;
+    margin-left: 10px;
+}
+.tool-link a:hover{
+    color: #8717f0;
+    text-decoration: underline;
+}
+#text_top{
+    text-align: left;
+    margin-left: 20px;
+    color: #ff1f62;
+}
+.menu{
+    display: flex;
+    width: 100%;
+}
+.item{
+    flex: 1;
+    text-align: center;
+    border: 2px solid #5ed4cb;
+    font-size: clamp(11px,1.2vw,16px);
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #bbeeea;
+    border-right: 1px solid #04aab6;
+    border-left: 1px solid #04aab6;
+}
+.item:hover{
+    color: #8717f0;
+    text-decoration: underline;
+}
+.now{
+    border: 2px solid #ffa023;
+    background-color: #fdd07c;
+}
+#maleLabel,#femaleLabel,#ageVar {
+    width: 1300px;
+    padding: 8px;
+    font-size: 16px;
+}
+#horixix-Max,#horixix-scale,#title-label{
+    width: 300px;
+}
+.section-title{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+.theme{
+    font-weight: bold;
+}
+#codeOutput {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    height: 300px;
+}
+#generateBtn,
+#copyBtn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#copyCircle{
+    text-align: center;
+}
+
+@media (max-width: 600px){
+    .theme{
+        font-size: 0.8rem;
+    }
+    .theme1{
+        font-size: 1.2rem;
+    }
+}
