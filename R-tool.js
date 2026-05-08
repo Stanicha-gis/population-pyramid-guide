@@ -84,11 +84,6 @@ document.getElementById("generateBtn").addEventListener("click", function () {
     }
 
     const code = `
-install.packages("rlang")
-install.packages("vctrs")
-install.packages("scales")
-install.packages("ggplot2")
-
 library(ggplot2)
 library(dplyr)
 library(tidyr)
